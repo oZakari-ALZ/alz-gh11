@@ -11,7 +11,7 @@ param platformIdentityConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'identity'
   managementGroupParentId: 'platform'
-  managementGroupIntermediateRootName: 'alzgh'
+  managementGroupIntermediateRootName: 'alz'
   managementGroupDisplayName: 'Identity'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []
