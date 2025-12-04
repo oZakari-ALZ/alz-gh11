@@ -362,33 +362,35 @@ var allPolicyAssignments = [
 //   Resources  //
 // ============ //
 
-module landingZones 'br/public:avm/ptn/alz/empty:0.3.3' = {
-  params: {
-    createOrUpdateManagementGroup: landingZonesConfig.?createOrUpdateManagementGroup
-    managementGroupName: managementGroupFinalName
-    managementGroupDisplayName: landingZonesConfig.?managementGroupDisplayName ?? 'Landing zones'
-    managementGroupDoNotEnforcePolicyAssignments: landingZonesConfig.?managementGroupDoNotEnforcePolicyAssignments ?? []
-    managementGroupExcludedPolicyAssignments: landingZonesConfig.?managementGroupExcludedPolicyAssignments ?? []
-    managementGroupParentId: landingZonesConfig.?managementGroupParentId ?? 'alz'
-    managementGroupCustomRoleDefinitions: allRbacRoleDefs
-    managementGroupRoleAssignments: landingZonesConfig.?customerRbacRoleAssignments
-    managementGroupCustomPolicyDefinitions: allPolicyDefs
-    managementGroupCustomPolicySetDefinitions: allPolicySetDefinitions
-    managementGroupPolicyAssignments: allPolicyAssignments
-    location: parLocations[0]
-    subscriptionsToPlaceInManagementGroup: landingZonesConfig.?subscriptionsToPlaceInManagementGroup
-    waitForConsistencyCounterBeforeCustomPolicyDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomPolicyDefinitions
-    waitForConsistencyCounterBeforeCustomPolicySetDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomPolicySetDefinitions
-    waitForConsistencyCounterBeforeCustomRoleDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomRoleDefinitions
-    waitForConsistencyCounterBeforePolicyAssignments: landingZonesConfig.?waitForConsistencyCounterBeforePolicyAssignments
-    waitForConsistencyCounterBeforeRoleAssignments: landingZonesConfig.?waitForConsistencyCounterBeforeRoleAssignment
-    waitForConsistencyCounterBeforeSubPlacement: landingZonesConfig.?waitForConsistencyCounterBeforeSubPlacement
-    enableTelemetry: parEnableTelemetry
-  }
-}
+// module landingZones 'br/public:avm/ptn/alz/empty:0.3.3' = {
+//   params: {
+//     createOrUpdateManagementGroup: landingZonesConfig.?createOrUpdateManagementGroup
+//     managementGroupName: managementGroupFinalName
+//     managementGroupDisplayName: landingZonesConfig.?managementGroupDisplayName ?? 'Landing zones'
+//     managementGroupDoNotEnforcePolicyAssignments: landingZonesConfig.?managementGroupDoNotEnforcePolicyAssignments ?? []
+//     managementGroupExcludedPolicyAssignments: landingZonesConfig.?managementGroupExcludedPolicyAssignments ?? []
+//     managementGroupParentId: landingZonesConfig.?managementGroupParentId ?? 'alz'
+//     managementGroupCustomRoleDefinitions: allRbacRoleDefs
+//     managementGroupRoleAssignments: landingZonesConfig.?customerRbacRoleAssignments
+//     managementGroupCustomPolicyDefinitions: allPolicyDefs
+//     managementGroupCustomPolicySetDefinitions: allPolicySetDefinitions
+//     managementGroupPolicyAssignments: allPolicyAssignments
+//     location: parLocations[0]
+//     subscriptionsToPlaceInManagementGroup: landingZonesConfig.?subscriptionsToPlaceInManagementGroup
+//     waitForConsistencyCounterBeforeCustomPolicyDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomPolicyDefinitions
+//     waitForConsistencyCounterBeforeCustomPolicySetDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomPolicySetDefinitions
+//     waitForConsistencyCounterBeforeCustomRoleDefinitions: landingZonesConfig.?waitForConsistencyCounterBeforeCustomRoleDefinitions
+//     waitForConsistencyCounterBeforePolicyAssignments: landingZonesConfig.?waitForConsistencyCounterBeforePolicyAssignments
+//     waitForConsistencyCounterBeforeRoleAssignments: landingZonesConfig.?waitForConsistencyCounterBeforeRoleAssignment
+//     waitForConsistencyCounterBeforeSubPlacement: landingZonesConfig.?waitForConsistencyCounterBeforeSubPlacement
+//     enableTelemetry: parEnableTelemetry
+//   }
+// }
 
 // ================ //
 // Definitions
 // ================ //
+
+output parPolicyAssignments array = allPolicyAssignments
 
 import { alzCoreType as alzCoreType } from '../../../alzCoreType.bicep'
