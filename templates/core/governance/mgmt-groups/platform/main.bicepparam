@@ -15,8 +15,8 @@ param parCrossMgRbacScopes = {
 param platformConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'platform'
-  managementGroupParentId: 'alzgh'
-  managementGroupIntermediateRootName: 'alzgh'
+  managementGroupParentId: 'alz'
+  managementGroupIntermediateRootName: 'alz'
   managementGroupDisplayName: 'Platform'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []
