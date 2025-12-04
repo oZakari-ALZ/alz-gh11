@@ -14,20 +14,28 @@ on:
         description: 'Run Steps: Governance - Intermediate Root'
         type: boolean
         default: true
-      governance-platform:
-        description: 'Run Steps: Governance - Platform'
-        type: boolean
-        default: true
       governance-landingzones:
         description: 'Run Steps: Governance - Landing Zones'
+        type: boolean
+        default: true
+      governance-landingzones-children:
+        description: 'Run Steps: Governance - Landing Zone Children'
+        type: boolean
+        default: true
+      governance-platform:
+        description: 'Run Steps: Governance - Platform'
         type: boolean
         default: true
       governance-platform-children:
         description: 'Run Steps: Governance - Platform Children'
         type: boolean
         default: true
-      governance-landingzones-children:
-        description: 'Run Steps: Governance - Landing Zone Children'
+      governance-sandbox:
+        description: 'Run Steps: Governance - Sandbox'
+        type: boolean
+        default: true
+      governance-decommissioned:
+        description: 'Run Steps: Governance - Decommissioned'
         type: boolean
         default: true
       core:
@@ -49,15 +57,15 @@ jobs:
     with:
       skip_what_if: ${{ github.event_name != 'workflow_dispatch' && false || inputs.skip_what_if == true }}
       governance-int-root: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-int-root == true }}
+      governance-landingzones: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones == true }}
+      governance-landingzones-corp: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
+      governance-landingzones-online: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
       governance-platform: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-platform == true }}
       governance-platform-connectivity: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-platform-children == true }}
       governance-platform-identity: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-platform-children == true }}
       governance-platform-management: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-platform-children == true }}
       governance-platform-security: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-platform-children == true }}
-      governance-landingzones: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones == true }}
-      governance-landingzones-corp: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
-      governance-landingzones-online: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
-      governance-sandbox: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
-      governance-decommissioned: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-landingzones-children == true }}
+      governance-sandbox: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-sandbox == true }}
+      governance-decommissioned: ${{ github.event_name != 'workflow_dispatch' && true || inputs.governance-decommissioned == true }}
       core-logging: ${{ github.event_name != 'workflow_dispatch' && true || inputs.core == true }}
       networking-hubnetworking: ${{ github.event_name != 'workflow_dispatch' && true || inputs.networking == true }}
