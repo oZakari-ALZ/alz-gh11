@@ -11,7 +11,7 @@ param decommissionedConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'decommissioned'
   managementGroupParentId: 'alz'
-  managementGroupIntermediateRootName: 'alz'
+  managementGroupIntermediateRootName: 'alzgh'
   managementGroupDisplayName: 'Decommissioned'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []

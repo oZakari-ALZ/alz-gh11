@@ -11,7 +11,7 @@ param platformConnectivityConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'connectivity'
   managementGroupParentId: 'platform'
-  managementGroupIntermediateRootName: 'alz'
+  managementGroupIntermediateRootName: 'alzgh'
   managementGroupDisplayName: 'Connectivity'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []

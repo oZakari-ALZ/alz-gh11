@@ -16,7 +16,7 @@ param platformConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'platform'
   managementGroupParentId: 'alz'
-  managementGroupIntermediateRootName: 'alz'
+  managementGroupIntermediateRootName: 'alzgh'
   managementGroupDisplayName: 'Platform'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []
