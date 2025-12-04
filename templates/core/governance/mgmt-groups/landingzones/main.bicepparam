@@ -10,8 +10,8 @@ param parEnableTelemetry = true
 param landingZonesConfig = {
   createOrUpdateManagementGroup: true
   managementGroupName: 'landingzones'
-  managementGroupParentId: 'alzgh'
-  managementGroupIntermediateRootName: 'alzgh'
+  managementGroupParentId: 'alz'
+  managementGroupIntermediateRootName: 'alz'
   managementGroupDisplayName: 'Landing zones'
   managementGroupDoNotEnforcePolicyAssignments: []
   managementGroupExcludedPolicyAssignments: []
@@ -24,7 +24,7 @@ param landingZonesConfig = {
   waitForConsistencyCounterBeforeCustomPolicyDefinitions: 10
   waitForConsistencyCounterBeforeCustomPolicySetDefinitions: 10
   waitForConsistencyCounterBeforeCustomRoleDefinitions: 10
-  waitForConsistencyCounterBeforePolicyAssignments: 20
+  waitForConsistencyCounterBeforePolicyAssignments: 10
   waitForConsistencyCounterBeforeRoleAssignment: 10
   waitForConsistencyCounterBeforeSubPlacement: 10
 }
@@ -33,82 +33,82 @@ param landingZonesConfig = {
 param parPolicyAssignmentParameterOverrides = {
   'Enable-DDoS-VNET': {
     parameters: {
-      ddosPlan: {
-        value: '/subscriptions/a9467115-24cc-4747-9bbb-1fa45921a1b2/resourceGroups/rg-alz-conn-${parLocations[0]}/providers/Microsoft.Network/ddosProtectionPlans/ddos-alz-${parLocations[0]}'
+    ddosPlan: {
+      value: '/subscriptions/a9467115-24cc-4747-9bbb-1fa45921a1b2/resourceGroups/rg-alz-conn-${parLocations[0]}/providers/Microsoft.Network/ddosProtectionPlans/ddos-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-AzSqlDb-Auditing': {
     parameters: {
-      logAnalyticsWorkspaceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.OperationalInsights/workspaces/log-alz-${parLocations[0]}'
+    logAnalyticsWorkspaceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.OperationalInsights/workspaces/log-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-vmArc-ChangeTrack': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
       }
     }
   }
   'Deploy-VM-ChangeTrack': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
-      }
-      userAssignedIdentityResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
+    }
+    userAssignedIdentityResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-VMSS-ChangeTrack': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
-      }
-      userAssignedIdentityResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-changetracking-${parLocations[0]}'
+    }
+    userAssignedIdentityResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-vmHybr-Monitoring': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
       }
     }
   }
   'Deploy-VM-Monitoring': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
-      }
-      userAssignedIdentityResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
+    }
+    userAssignedIdentityResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-VMSS-Monitoring': {
     parameters: {
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
-      }
-      userAssignedIdentityResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-vminsights-${parLocations[0]}'
+    }
+    userAssignedIdentityResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
       }
     }
   }
   'Deploy-MDFC-DefSQL-AMA': {
     parameters: {
-      userWorkspaceResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.OperationalInsights/workspaces/log-alz-${parLocations[0]}'
-      }
-      dcrResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-mdfcsql-${parLocations[0]}'
-      }
-      userAssignedIdentityResourceId: {
-        value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
+    userWorkspaceResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.OperationalInsights/workspaces/log-alz-${parLocations[0]}'
+    }
+    dcrResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.Insights/dataCollectionRules/dcr-alz-mdfcsql-${parLocations[0]}'
+    }
+    userAssignedIdentityResourceId: {
+      value: '/subscriptions/e082c776-addb-4bd7-bbb7-80fd1781649f/resourceGroups/rg-alz-logging-${parLocations[0]}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/uami-alz-${parLocations[0]}'
       }
     }
   }
